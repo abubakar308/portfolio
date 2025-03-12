@@ -21,7 +21,7 @@ const Projects = () => {
           initial={{ opacity: 0, y: -20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="text-4xl font-bold text-purple-400 mb-6"
+          className="text-4xl font-bold text-blue-400 mb-6"
         >
           Projects
         </motion.h2>
@@ -35,12 +35,12 @@ const Projects = () => {
               className="bg-gray-800 p-6 rounded-xl shadow-lg"
             >
               <img src={project.image} alt={project.name} className="w-full h-40 object-cover rounded-lg mb-4" />
-              <h3 className="text-xl font-semibold text-purple-400">{project.name}</h3>
+              <h3 className="text-xl font-semibold text-blue-400">{project.name}</h3>
               <p className="text-gray-300 text-sm my-2">{project.description}</p>
               {/* <div className="text-gray-400 text-xs mb-4">Tech: {project.stack.join(", ")}</div> */}
               <Link
                 to={`/project/${index}`}
-                className="bg-purple-500 text-white px-4 py-2 rounded-lg inline-block mt-2 hover:bg-purple-600 transition-all"
+                className="bg-blue-500 text-white px-4 py-2 rounded-lg inline-block mt-2 hover:bg-blue-600 transition-all"
               >
                 View More
               </Link>

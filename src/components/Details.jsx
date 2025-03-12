@@ -54,17 +54,17 @@ const Details = () => {
     return (
         <section className="bg-gray-900 text-white py-16 px-6 md:px-16">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl font-bold text-purple-400 mb-4">{project.name}</h1>
+        <h1 className="text-4xl font-bold text-blue-400 mb-4">{project.name}</h1>
         <p className="text-gray-300 mb-6">{project.Detailed_description}</p>
-        <h2 className="text-xl font-semibold text-purple-300">Main Technology Stack</h2>
-        {/* <p className="text-gray-400 mb-4">{project.stack.join(", ")}</p> */}
-        <h2 className="text-xl font-semibold text-purple-300">Challenges Faced</h2>
+        <h2 className="text-xl font-semibold text-blue-300">Main Technology Stack</h2>
+        <p className="text-gray-400 mb-4">{project.stack.join(", ")}</p>
+        <h2 className="text-xl font-semibold text-blue-300">Challenges Faced</h2>
         <p className="text-gray-400 mb-4">{project.challenges}</p>
-        <h2 className="text-xl font-semibold text-purple-300">Potential Improvements & Future Plans</h2>
+        <h2 className="text-xl font-semibold text-blue-300">Potential Improvements & Future Plans</h2>
         <p className="text-gray-400 mb-4">{project.futurePlans}</p>
         <div className="flex gap-4">
-          <a href={project.liveLink} target="blank"  className="bg-purple-500 text-white px-4 py-2 rounded-lg hover:bg-purple-600 transition-all">Live Project</a>
-          <a href={project.github} target="blank" className="bg-purple-500 text-white px-4 py-2 rounded-lg hover:bg-purple-600 transition-all">GitHub Repo</a>
+          <a href={project.liveLink} target="blank"  className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-all">Live Project</a>
+          <a href={project.github} target="blank" className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-all">GitHub Repo</a>
           <NavLink to="/" className="bg-gray-700 hidden md:flex text-white px-4 py-2 rounded-lg hover:bg-gray-800 transition-all">Go Back</NavLink>
         </div>
         <div className=" md:hidden mt-6">

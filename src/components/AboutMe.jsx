@@ -2,7 +2,7 @@
 const AboutMe = () => {
     return (
         <section id="about" className="min-h-screen bg-gray-900 text-white flex flex-col justify-center items-center px-6 py-12 text-center">
-      <h1 className="text-4xl text-blue-500 font-bold mb-6">Abput Me</h1>
+      <h1 className="text-4xl text-blue-500 font-bold mb-6">About Me</h1>
       <p className="text-lg max-w-3xl leading-relaxed">
        Hi, I'm Md Abu Bakar Siddique, A passionate <span className="text-blue-400 font-semibold">Full Stack Web Developer</span> with a strong focus on crafting efficient, scalable, and user-friendly web applications. I thrive on **solving complex problems** and continuously learning new technologies to improve my development skills.
       </p>

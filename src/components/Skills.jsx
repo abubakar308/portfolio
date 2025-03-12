@@ -36,7 +36,7 @@ const Skills = () => {
           initial={{ opacity: 0, y: -20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="text-4xl font-bold text-purple-400 mb-8"
+          className="text-4xl font-bold text-blue-500 mb-8"
         >
           Skills
         </motion.h2>
