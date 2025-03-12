@@ -38,17 +38,19 @@ const Navbar = () => {
 
       {/* Mobile Navigation (Full-Screen Overlay) */}
       {isMenuOpen && (
-        <div className="fixed inset-0 bg-gray-700 bg-opacity-90 flex flex-col justify-center items-center text-center space-y-5 text-xl font-semibold transition-all duration-300">
+        <div className="fixed top-[20px] left-0 right-0 bg-gray-500 bg-opacity-60 backdrop-blur-md flex flex-col justify-center items-center text-center space-y-5 text-xl font-semibold transition-all duration-300">
           <button 
             onClick={() => setIsMenuOpen(false)} 
             className="absolute top-6 right-6 text-white">
              <RxCross1 size={32} />
           </button>
-          <HashLink to="#home" onClick={() => setIsMenuOpen(false)} className="hover:text-blue-500">Home</HashLink>
-          <HashLink to="#about" onClick={() => setIsMenuOpen(false)} className="hover:text-blue-500">About</HashLink>
-          <HashLink to="#skills" onClick={() => setIsMenuOpen(false)} className="hover:text-blue-500">Skills</HashLink>
-          <HashLink to="#projects" onClick={() => setIsMenuOpen(false)} className="hover:text-blue-500">Projects</HashLink>
-          <HashLink to="#contact" onClick={() => setIsMenuOpen(false)} className="hover:text-blue-500">Contact</HashLink>
+          <div className="flex flex-col space-y-5">  {/* Added a wrapper div for better control */}
+    <HashLink to="#home" onClick={() => setIsMenuOpen(false)} className="hover:text-blue-500">Home</HashLink>
+    <HashLink to="#about" onClick={() => setIsMenuOpen(false)} className="hover:text-blue-500">About</HashLink>
+    <HashLink to="#skills" onClick={() => setIsMenuOpen(false)} className="hover:text-blue-500">Skills</HashLink>
+    <HashLink to="#projects" onClick={() => setIsMenuOpen(false)} className="hover:text-blue-500">Projects</HashLink>
+    <HashLink to="#contact" onClick={() => setIsMenuOpen(false)} className="hover:text-blue-500">Contact</HashLink>
+  </div>
         </div>
       )}
     </nav>

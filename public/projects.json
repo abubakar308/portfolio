@@ -1,0 +1,38 @@
+[
+  {
+    "name": "MediVendor",
+    "image": "https://i.ibb.co.com/nMn9c4TG/Screenshot-2025-03-12-230841.png",
+    "stack": ["React", "Tailwind CSS", "MongoDB", "Node.js", "Express"],
+    "description": "A modern medical equipment e-commerce platform.",
+    "liveLink": "https://medivendor-2b953.web.app/",
+    "github": "https://github.com/abubakar308/medivendor-client",
+    "challenges": "Implementing secure transactions and managing inventory efficiently."
+  },
+    {
+      "name": "Pet Adoption Site",
+      "image": "https://i.ibb.co.com/Xk7wPkKm/Pet.png",
+      "stack": ["React", "Tailwind CSS", "Firebase"],
+      "description": "A platform connecting pet adopters with shelters.",
+      "liveLink": "#",
+      "github": "https://github.com/ZubairAlMamun2/Pet-Adoption-Site",
+      "challenges": "Managing real-time updates and authentication."
+    },
+    {
+      "name": "Learn Together",
+      "image": "https://i.ibb.co.com/Xk7wPkKm/LearnTogether.png",
+      "stack": ["React", "Tailwind CSS", "MongoDB", "Node.js", "Express", "Firebase"],
+      "description": "An online tutor booking platform connecting students with expert tutors.",
+      "liveLink": "#",
+      "github": "https://github.com/abubakar308/learn-together-client",
+      "challenges": "Building a seamless booking system and ensuring real-time updates."
+    },
+    {
+      "name": "Funding Collection App",
+      "image": "https://i.ibb.co.com/Rk73GvP1/croudcube.png",
+      "stack": ["React", "Node.js", "Express", "MongoDB"],
+      "description": "A crowdfunding platform for social causes.",
+      "liveLink": "#",
+      "github": "https://github.com/ZubairAlMamun2/Funding-Collection-App",
+      "challenges": "Implementing secure payment transactions."
+    }
+  ]
