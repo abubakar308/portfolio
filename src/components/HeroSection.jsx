@@ -10,7 +10,7 @@ const isInView = useInView(ref, { triggerOnce: true });
         <section
         id="home"
         ref={ref}
-        className="flex flex-col lg:flex-row items-center pt-20 md:pt-6 justify-center px-6 lg:px-16"
+        className="flex flex-col lg:flex-row items-center my-8 pt-20 md:pt-6 justify-center px-6 lg:px-16"
       >
         {/* Left Content */}
         <div className="text-center lg:text-left max-w-lg">
