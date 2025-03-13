@@ -43,7 +43,7 @@ const Contact = () => {
       };
     return (
         <section id="contact" className="min-h-screen flex flex-col items-center justify-center bg-[#0f0f1a] text-white p-6">
-        <h2 className="text-4xl font-bold text-center mb-3 text-purple-400">Contact Me</h2>
+        <h2 className="text-4xl font-bold text-center mb-3 text-blue-400">Contact Me</h2>
         <p className="text-gray-400 text-center mb-8">Got a question? Send me a message, and I'll get back to you soon.</p>
   
         <div className="grid md:grid-cols-2 gap-8  w-full max-w-7xl">
@@ -52,26 +52,35 @@ const Contact = () => {
             <p className="text-gray-300 mb-4">Have something to discuss? Send me a email and let's talk or you can cantact me via phone.</p>
   
             <div className="space-y-4">
-              <div className="flex items-center space-x-3">
-                <FaEnvelope className="text-xl text-blue-400" />
-                <a href="https://mail.google.com/mail/u/0/#inbox?compose=DmwnWrRsqPrwpSSNpNZlGHrrtkRWHQTmhmnKLmRMzKpcRlRPXTfvrrZgjbXcrdRvBTdQSjKgCpqb" target="_blank" className="text-lg text-blue-400 hover:underline">
-                 mdabubakarsiddique789@gmail.com
-                </a>
-              </div>
+            <div className="flex items-center space-x-3">
+  <FaEnvelope className="text-xl text-blue-400" />
+  <a 
+    href="https://mail.google.com/mail/u/0/#inbox?compose=DmwnWrRsqPrwpSSNpNZlGHrrtkRWHQTmhmnKLmRMzKpcRlRPXTfvrrZgjbXcrdRvBTdQSjKgCpqb" 
+    target="_blank" 
+    className="text-lg text-blue-400 hover:underline"
+  >
+    mdabubakarsiddique789@gmail.com
+  </a>
+</div>
   
               <div className="flex items-center space-x-3">
-                <FaPhone className="text-xl text-green-400" />
-                <a  className="text-lg text-green-400 hover:underline">
+                <FaPhone className="text-xl text-blue-400" />
+                <a  href="tel:+8801773398308"   className="text-lg text-blue-400 hover:underline">
                   +880 1773398308
                 </a>
               </div>
   
-              <div className="flex items-center space-x-3">
-                <FaWhatsapp className="text-xl text-green-500" />
-                <a href="https://web.whatsapp.com/" target="_blank" rel="noopener noreferrer" className="text-lg text-green-500 hover:underline">
-                  Chat on WhatsApp
-                </a>
-              </div>
+            <div className="flex items-center space-x-3">
+  <FaWhatsapp className="text-xl text-blue-500" />
+  <a 
+    href="https://wa.me/8801773398308?text=Hello%20there!" 
+    target="_blank" 
+    rel="noopener noreferrer" 
+    className="text-lg text-blue-500 hover:underline"
+  >
+    Chat on WhatsApp
+  </a>
+</div>
             </div>
           </div>
   
@@ -90,7 +99,7 @@ const Contact = () => {
               value={formData.name}
               onChange={handleChange}
               required
-              className="w-full mt-1 p-2 rounded bg-gray-800 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-purple-500"
+              className="w-full mt-1 p-2 rounded bg-gray-800 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
               placeholder="Enter your name"
             />
           </label>
@@ -102,7 +111,7 @@ const Contact = () => {
               value={formData.email}
               onChange={handleChange}
               required
-              className="w-full mt-1 p-2 rounded bg-gray-800 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-purple-500"
+              className="w-full mt-1 p-2 rounded bg-gray-800 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
               placeholder="Enter your email"
             />
           </label>
@@ -114,7 +123,7 @@ const Contact = () => {
               value={formData.message}
               onChange={handleChange}
               required
-              className="w-full mt-1 p-2 rounded bg-gray-800 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-purple-500"
+              className="w-full mt-1 p-2 rounded bg-gray-800 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
               placeholder="Write your message here..."
               rows="4"
             />
@@ -122,7 +131,7 @@ const Contact = () => {
   
           <button
             type="submit"
-            className="w-full mt-4 bg-purple-600 hover:bg-purple-500 text-white font-semibold py-2 px-4 rounded-lg transition duration-300"
+            className="w-full mt-4 bg-blue-600 hover:bg-blue-500 text-white font-semibold py-2 px-4 rounded-lg transition duration-300"
           >
             Send Message
           </button>

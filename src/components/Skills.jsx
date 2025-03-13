@@ -1,6 +1,5 @@
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { useInView } from "react-intersection-observer";
 
 const skills = [
   {
@@ -30,8 +29,13 @@ const Skills = () => {
   const isInView = useInView(ref, { triggerOnce: true });
 
   return (
-    <section id="skills" ref={ref} className="bg-[#0f0f1a] text-white py-16 px-6 md:px-16">
+    <section
+      id="skills"
+      ref={ref}
+      className="bg-[#0f0f1a] text-white py-16 px-6 md:px-16"
+    >
       <div className="max-w-5xl mx-auto text-center">
+        {/* Section Title */}
         <motion.h2
           initial={{ opacity: 0, y: -20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -40,24 +44,52 @@ const Skills = () => {
         >
           Skills
         </motion.h2>
-        
+
+        {/* Skill Categories */}
         {skills.map((skillSet, index) => (
           <div key={index} className="mb-12">
-            <h3 className="text-2xl font-semibold text-gray-300 mb-6">{skillSet.category}</h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 justify-center">
+            <motion.h3
+              initial={{ opacity: 0, y: 10 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: index * 0.2 }}
+              className="text-2xl font-semibold text-gray-300 mb-6"
+            >
+              {skillSet.category}
+            </motion.h3>
+
+            {/* Skill Grid */}
+            <motion.div
+              className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 justify-center"
+              initial="hidden"
+              animate={isInView ? "visible" : "hidden"}
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: {
+                  opacity: 1,
+                  y: 0,
+                  transition: { staggerChildren: 0.15 },
+                },
+              }}
+            >
               {skillSet.items.map((skill, i) => (
                 <motion.div
                   key={i}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                  transition={{ duration: 0.5, delay: i * 0.1 }}
-                  className="bg-gray-800 p-6 rounded-xl shadow-lg flex flex-col items-center hover:bg-purple-600 transition-all cursor-pointer"
+                  variants={{
+                    hidden: { opacity: 0, scale: 0.9 },
+                    visible: { opacity: 1, scale: 1 },
+                  }}
+                  transition={{ duration: 0.5 }}
+                  className="bg-gray-800 p-6 rounded-xl shadow-lg flex flex-col items-center hover:bg-purple-600 transition-all transform hover:scale-105 cursor-pointer"
                 >
-                  <img src={skill.icon} alt={skill.name} className="w-16 h-16 mb-4" />
+                  <img
+                    src={skill.icon}
+                    alt={skill.name}
+                    className="w-16 h-16 mb-4"
+                  />
                   <p className="text-lg font-medium">{skill.name}</p>
                 </motion.div>
               ))}
-            </div>
+            </motion.div>
           </div>
         ))}
       </div>

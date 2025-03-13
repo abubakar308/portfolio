@@ -11,37 +11,28 @@ const projects = [
         challenges: "Implementing secure transactions and managing inventory efficiently.",
         futurePlans: "Enhance search functionality, add a recommendation system, and improve accessibility for a better user experience."
       },
-
-    {
-      name: "Pet Adoption Site",
-      stack: ["HTML", "CSS", "Javascript"],
-      description: "A platform connecting pet adopters with shelters.",
-      Detailed_description: "The Pet Adoption Site is a web application that helps users browse and adopt pets easily. It provides categorized pet listings, detailed pet profiles, and a seamless user experience. The project efficiently fetches pet data using APIs and implements interactive UI elements for better engagement.",
-      liveLink: "https://pet-shop-1971.netlify.app/",
-      github: "https://github.com/ZubairAlMamun2/Pet-Adoption-Site",
-      challenges: "Managing real-time updates .",
-      futurePlans: "Implement AI-based pet matching and real-time chat between adopters and shelters."
-    },
     {
   name: "Learn Together",
   stack: ["React", "MongoDB", "Node.js", "Express", "Tailwind CSS", "Firebase"],
   description: "An online tutor booking platform connecting students with expert tutors.",
   Detailed_description: "Learn Together is designed to simplify tutor hiring and promote accessible learning globally. Users can browse tutors by category, book sessions, and manage their learning journey effectively.",
-  liveLink: "#",
+  liveLink: "https://online-tutor-booking-pla-5a98e.web.app",
   github: "https://github.com/abubakar308/learn-together-client",
   challenges: "Building a seamless booking system and ensuring real-time updates.",
   futurePlans: "Implement AI-driven tutor recommendations and integrate a video calling feature."
 },
-    {
-      name: "Funding Collection App",
-      stack: ["React", "Node.js", "Express", "MongoDB","Tailwind CSS"],
-      description: "A crowdfunding platform for social causes.",
-      Detailed_description: "This is a crowdfunding app where users can create and manage fundraising campaigns. It allows easy donations to causes using modern web technologies.",
-      liveLink: "https://crowdcube-1971.netlify.app/",
-      github: "https://github.com/ZubairAlMamun2/Funding-Collection-App",
-      challenges: "Implementing secure payment transactions.",
-      futurePlans: "Expand to support global funding and integrate blockchain for transparent transactions."
-    }
+{
+    name: "AllStar Equipment Online Store",
+    stack: ["React", "MongoDB", "Node.js", "Express", "Tailwind CSS"],
+    description: "An online store for sports and fitness equipment.",
+    Detailed_description:
+      "AllStar Equipment Online Store provides an extensive selection of sports gear and fitness equipment. It features secure authentication, an intuitive shopping experience, and a seamless checkout process.",
+    liveLink: "https://sport-equipment-online-store.web.app",
+    github: "https://github.com/abubakar308/AllStar-Equipment-client",
+    challenges: "Managing real-time inventory updates and optimizing performance for a large product catalog.",
+    futurePlans:
+      "Introduce AI-based product recommendations and implement AR (Augmented Reality) for virtual try-outs of equipment.",
+  }
   ];
 
 const Details = () => {

@@ -9,17 +9,8 @@
     "challenges": "Implementing secure transactions and managing inventory efficiently."
   },
     {
-      "name": "Pet Adoption Site",
-      "image": "https://i.ibb.co.com/Xk7wPkKm/Pet.png",
-      "stack": ["React", "Tailwind CSS", "Firebase"],
-      "description": "A platform connecting pet adopters with shelters.",
-      "liveLink": "#",
-      "github": "https://github.com/ZubairAlMamun2/Pet-Adoption-Site",
-      "challenges": "Managing real-time updates and authentication."
-    },
-    {
       "name": "Learn Together",
-      "image": "https://i.ibb.co.com/Xk7wPkKm/LearnTogether.png",
+      "image": "https://i.ibb.co.com/jvxVC0wg/Screenshot-2025-03-13-092705.png",
       "stack": ["React", "Tailwind CSS", "MongoDB", "Node.js", "Express", "Firebase"],
       "description": "An online tutor booking platform connecting students with expert tutors.",
       "liveLink": "#",
@@ -27,12 +18,13 @@
       "challenges": "Building a seamless booking system and ensuring real-time updates."
     },
     {
-      "name": "Funding Collection App",
-      "image": "https://i.ibb.co.com/Rk73GvP1/croudcube.png",
-      "stack": ["React", "Node.js", "Express", "MongoDB"],
-      "description": "A crowdfunding platform for social causes.",
-      "liveLink": "#",
-      "github": "https://github.com/ZubairAlMamun2/Funding-Collection-App",
-      "challenges": "Implementing secure payment transactions."
+      "name": "AllStar Equipment Online Store",
+      "image": "https://i.ibb.co.com/k6PdLstz/Screenshot-2025-03-13-093058.png",
+      "stack": ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS"],
+      "description": "An e-commerce platform for sports equipment, providing a seamless shopping experience.",
+      "liveLink": "https://sport-equipment-online-store.web.app",
+      "github": "https://github.com/abubakar308/AllStar-Equipment-client",
+      "challenges": "Optimizing product filtering and ensuring smooth checkout process.",
+      "futurePlans": "Add real-time stock updates and implement AI-based product recommendations."
     }
   ]
