@@ -32,7 +32,7 @@ const Skills = () => {
     <section
       id="skills"
       ref={ref}
-      className="bg-[#0f0f1a] text-white py-16 px-6 md:px-16"
+      className="py-16 px-6 md:px-16"
     >
       <div className="max-w-5xl mx-auto text-center">
         {/* Section Title */}
@@ -52,7 +52,7 @@ const Skills = () => {
               initial={{ opacity: 0, y: 10 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: index * 0.2 }}
-              className="text-2xl font-semibold text-gray-300 mb-6"
+              className="text-2xl font-semibold mb-6"
             >
               {skillSet.category}
             </motion.h3>
@@ -79,7 +79,7 @@ const Skills = () => {
                     visible: { opacity: 1, scale: 1 },
                   }}
                   transition={{ duration: 0.5 }}
-                  className="bg-gray-800 p-6 rounded-xl shadow-lg flex flex-col items-center hover:bg-purple-600 transition-all transform hover:scale-105 cursor-pointer"
+                  className="p-6 rounded-xl shadow-lg flex flex-col items-center hover:bg-blue-600 transition-all transform hover:scale-105 cursor-pointer"
                 >
                   <img
                     src={skill.icon}

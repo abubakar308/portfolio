@@ -8,7 +8,7 @@ const AboutMe = () => {
         <section
         ref={ref}
         id="about"
-        className="min-h-screen bg-gray-900 text-white flex flex-col justify-center items-center px-6 py-12 text-center"
+        className="min-h-screen  flex flex-col justify-center items-center px-6 py-12 text-center"
       >
         <motion.h1
           className="text-4xl text-blue-500 font-bold mb-6"

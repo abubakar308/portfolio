@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { IoMenu } from 'react-icons/io5';
 import { MdMenu } from 'react-icons/md';
 import { RxCross1 } from 'react-icons/rx';
@@ -6,18 +6,37 @@ import { HashLink } from 'react-router-hash-link';
 
 const Navbar = () => {
 
+    const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
+
+useEffect(() => {
+  if (theme === 'dark') {
+    document.body.classList.add('dark-mode');
+    localStorage.setItem('theme', 'dark');
+  } else {
+    document.body.classList.remove('dark-mode');
+    localStorage.setItem('theme', 'light');
+  }
+}, [theme]);
+
+const toggleTheme = () => {
+  setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
+};
+
     const [isMenuOpen, setIsMenuOpen] = useState(false); 
     return (
-        <nav className="bg-gray-800 text-white p-4 fixed w-full top-0 left-0 z-10 shadow-md">
+        <nav className="p-4 fixed w-full backdrop-blur-lg top-0 left-0 z-10  shadow-lg">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         {/* Logo */}
         <div className="text-2xl font-bold">Md Abu Bakar Siddique</div>
 
+        <button onClick={toggleTheme}>
+  Switch to {theme === 'light' ? 'Dark' : 'Light'} Mode
+</button>
+
         {/* Hamburger Menu (Only on Mobile) */}
         <div className="lg:hidden">
           <button 
-            onClick={() => setIsMenuOpen(!isMenuOpen)} 
-            className="text-white">
+            onClick={() => setIsMenuOpen(!isMenuOpen)} >
             {isMenuOpen ? (
             ""
             ) : (
@@ -38,13 +57,13 @@ const Navbar = () => {
 
       {/* Mobile Navigation (Full-Screen Overlay) */}
       {isMenuOpen && (
-        <div className="fixed top-[20px] left-0 right-0 bg-gray-500 bg-opacity-60 backdrop-blur-md flex flex-col justify-center items-center text-center space-y-5 text-xl font-semibold transition-all duration-300">
+        <div className="fixed bg-gray-600 top-[20px] left-0 right-0 bg-opacity-60 backdrop-blur-md flex flex-col justify-center items-center text-center space-y-5 text-xl font-semibold transition-all duration-300">
           <button 
             onClick={() => setIsMenuOpen(false)} 
-            className="absolute top-6 right-6 text-white">
+            className="absolute top-6 right-6">
              <RxCross1 size={32} />
           </button>
-          <div className="flex flex-col space-y-5">  {/* Added a wrapper div for better control */}
+          <div className="flex flex-col mt-10 space-y-5">  {/* Added a wrapper div for better control */}
     <HashLink to="#home" onClick={() => setIsMenuOpen(false)} className="hover:text-blue-500">Home</HashLink>
     <HashLink to="#about" onClick={() => setIsMenuOpen(false)} className="hover:text-blue-500">About</HashLink>
     <HashLink to="#skills" onClick={() => setIsMenuOpen(false)} className="hover:text-blue-500">Skills</HashLink>

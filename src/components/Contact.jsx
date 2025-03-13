@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { FaComment, FaEnvelope, FaPhone, FaWhatsapp } from "react-icons/fa";
 import Swal from "sweetalert2";
+import emailjs from 'emailjs-com';
 
 const Contact = () => {
     const [formData, setFormData] = useState({
@@ -10,6 +11,7 @@ const Contact = () => {
       });
     
       const [status, setStatus] = useState("");
+      console.log(formData)
     
       const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -19,10 +21,10 @@ const Contact = () => {
         e.preventDefault();
         emailjs
           .send(
-            "service_yx9rea4",
-            "template_2gxrglu", 
+            "service_t3tewuh",
+            "template_l67bttf", 
             formData,
-            "oHRFApaPTor9avKtz"
+            "KjNzzBhoT4auvs-ik"
           )
           .then(
             () => {
@@ -42,14 +44,14 @@ const Contact = () => {
           );
       };
     return (
-        <section id="contact" className="min-h-screen flex flex-col items-center justify-center bg-[#0f0f1a] text-white p-6">
+        <section id="contact" className="min-h-screen flex flex-col items-center justify-center p-6">
         <h2 className="text-4xl font-bold text-center mb-3 text-blue-400">Contact Me</h2>
-        <p className="text-gray-400 text-center mb-8">Got a question? Send me a message, and I'll get back to you soon.</p>
+        <p className="text-center mb-8">Got a question? Send me a message, and I'll get back to you soon.</p>
   
         <div className="grid md:grid-cols-2 gap-8  w-full max-w-7xl">
-          <div className="bg-gray-800 p-6 rounded-xl  md:full shadow-lg">
-            <h3 className="text-xl font-semibold mb-4 text-purple-300">Get in Touch</h3>
-            <p className="text-gray-300 mb-4">Have something to discuss? Send me a email and let's talk or you can cantact me via phone.</p>
+          <div className=" p-6 rounded-xl  md:full shadow-lg">
+            <h3 className="text-xl font-semibold mb-4 text-blue-400">Get in Touch</h3>
+            <p className="mb-4">Have something to discuss? Send me a email and let's talk or you can cantact me via phone.</p>
   
             <div className="space-y-4">
             <div className="flex items-center space-x-3">
@@ -85,8 +87,8 @@ const Contact = () => {
           </div>
   
   
-          <div className="bg-gray-800 p-6  rounded-xl shadow-lg">
-            <h3 className="text-xl font-semibold mb-4 text-purple-300 flex items-center">
+          <div className="p-6  rounded-xl shadow-lg">
+            <h3 className="text-xl font-semibold mb-4 text-blue-300 flex items-center">
               <FaComment className="mr-2" /> Comments
             </h3>
   
@@ -99,7 +101,7 @@ const Contact = () => {
               value={formData.name}
               onChange={handleChange}
               required
-              className="w-full mt-1 p-2 rounded bg-gray-800 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full mt-1 p-2 rounded border border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
               placeholder="Enter your name"
             />
           </label>
@@ -111,7 +113,7 @@ const Contact = () => {
               value={formData.email}
               onChange={handleChange}
               required
-              className="w-full mt-1 p-2 rounded bg-gray-800 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full mt-1 p-2 rounded border border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
               placeholder="Enter your email"
             />
           </label>
@@ -123,7 +125,7 @@ const Contact = () => {
               value={formData.message}
               onChange={handleChange}
               required
-              className="w-full mt-1 p-2 rounded bg-gray-800 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full mt-1 p-2 rounded border border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
               placeholder="Write your message here..."
               rows="4"
             />

@@ -11,11 +11,11 @@ const Projects = () => {
         then((data)=>setProjects(data))
     },[])
 
-
-  const ref = useRef(null);
-  const isInView = useInView(ref, { triggerOnce: true });
+    const ref = useRef(null);
+    const isInView = useInView(ref, { triggerOnce: true, threshold: 0.2 });
+    
     return (
-        <section id="projects" ref={ref} className="bg-gray-900 text-white py-16 px-6 md:px-16">
+        <section id="projects" ref={ref} className="py-14 px-6 md:px-14">
       <div className="max-w-5xl mx-auto text-center">
         <motion.h2
           initial={{ opacity: 0, y: -20 }}
@@ -32,12 +32,11 @@ const Projects = () => {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={isInView ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.5, delay: index * 0.2 }}
-              className="bg-gray-800 p-6 rounded-xl shadow-lg"
+             className="p-6 rounded-xl shadow-lg transition-all duration-300 transform will-change-transform hover:scale-105 hover:shadow-2xl hover:bg-gray-400"
             >
               <img src={project.image} alt={project.name} className="w-full h-40 object-cover rounded-lg mb-4" />
               <h3 className="text-xl font-semibold text-blue-400">{project.name}</h3>
-              <p className="text-gray-300 text-sm my-2">{project.description}</p>
-              {/* <div className="text-gray-400 text-xs mb-4">Tech: {project.stack.join(", ")}</div> */}
+              <p className="text-sm my-2">{project.description}</p>
               <Link
                 to={`/project/${index}`}
                 className="bg-blue-500 text-white px-4 py-2 rounded-lg inline-block mt-2 hover:bg-blue-600 transition-all"

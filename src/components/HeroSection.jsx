@@ -10,7 +10,7 @@ const isInView = useInView(ref, { triggerOnce: true });
         <section
         id="home"
         ref={ref}
-        className="bg-gray-900 text-white flex flex-col lg:flex-row items-center pt-20 md:pt-6 justify-center px-6 lg:px-16"
+        className="flex flex-col lg:flex-row items-center pt-20 md:pt-6 justify-center px-6 lg:px-16"
       >
         {/* Left Content */}
         <div className="text-center lg:text-left max-w-lg">
@@ -83,7 +83,7 @@ const isInView = useInView(ref, { triggerOnce: true });
           animate={isInView ? { opacity: 1, scale: 1 } : {}}
           transition={{ duration: 1, delay: 0.6 }}
         >
-          <img src={profile} alt="Abubakar" className="w-64 lg:w-80 shadow-lg rounded-lg" />
+          <img src={profile} alt="Abubakar" className="w-64 lg:w-80" />
         </motion.div>
       </section>
     );
