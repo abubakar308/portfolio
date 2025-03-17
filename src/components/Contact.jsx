@@ -44,7 +44,7 @@ const Contact = () => {
           );
       };
     return (
-        <section id="contact" className="min-h-screen flex flex-col items-center justify-center p-6">
+        <section id="contact" className="min-h-screen bg-black text-white flex flex-col items-center justify-center p-6">
         <h2 className="text-4xl font-bold text-center mb-3 text-blue-400">Contact Me</h2>
         <p className="text-center mb-8">Got a question? Send me a message, and I'll get back to you soon.</p>
   
@@ -101,7 +101,7 @@ const Contact = () => {
               value={formData.name}
               onChange={handleChange}
               required
-              className="w-full mt-1 p-2 rounded border border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full mt-1 p-2 rounded border text-gray-700 border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
               placeholder="Enter your name"
             />
           </label>
@@ -113,7 +113,7 @@ const Contact = () => {
               value={formData.email}
               onChange={handleChange}
               required
-              className="w-full mt-1 p-2 rounded border border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full mt-1 p-2 rounded border text-gray-700 border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
               placeholder="Enter your email"
             />
           </label>
@@ -125,7 +125,7 @@ const Contact = () => {
               value={formData.message}
               onChange={handleChange}
               required
-              className="w-full mt-1 p-2 rounded border border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full mt-1 p-2 rounded border text-gray-700 border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
               placeholder="Write your message here..."
               rows="4"
             />

@@ -10,7 +10,7 @@ const isInView = useInView(ref, { triggerOnce: true });
         <section
         id="home"
         ref={ref}
-        className="flex flex-col lg:flex-row items-center my-8 pt-20 md:pt-6 justify-center px-6 lg:px-16"
+        className="flex flex-col bg-black text-white lg:flex-row items-center  pt-20 md:pt-6 justify-center px-6 lg:px-16"
       >
         {/* Left Content */}
         <div className="text-center lg:text-left max-w-lg">
@@ -33,7 +33,7 @@ const isInView = useInView(ref, { triggerOnce: true });
           </motion.p>
   
           <motion.a
-            href="#"
+            href="https://drive.google.com/uc?export=download&id=10G4G9L7bnbsUlwVRU6EECTW7MALf_fV-"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={isInView ? { opacity: 1, scale: 1 } : {}}
             transition={{ duration: 0.8, delay: 0.5 }}

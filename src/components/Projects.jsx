@@ -15,7 +15,7 @@ const Projects = () => {
     const isInView = useInView(ref, { triggerOnce: true, threshold: 0.2 });
     
     return (
-        <section id="projects" ref={ref} className="py-14 px-6 md:px-14">
+        <section id="projects" ref={ref} className="py-14 bg-black text-white px-6 md:px-14">
       <div className="max-w-5xl mx-auto text-center">
         <motion.h2
           initial={{ opacity: 0, y: -20 }}

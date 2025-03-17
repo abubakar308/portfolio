@@ -32,7 +32,7 @@ const Skills = () => {
     <section
       id="skills"
       ref={ref}
-      className="py-16 px-6 md:px-16"
+      className="py-16 bg-black text-white px-6 md:px-16"
     >
       <div className="max-w-5xl mx-auto text-center">
         {/* Section Title */}
@@ -84,7 +84,7 @@ const Skills = () => {
                   <img
                     src={skill.icon}
                     alt={skill.name}
-                    className="w-16 h-16 mb-4"
+                    className="w-16 text-white h-16 mb-4"
                   />
                   <p className="text-lg font-medium">{skill.name}</p>
                 </motion.div>

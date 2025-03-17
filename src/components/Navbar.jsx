@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { BsMoon, BsSun } from 'react-icons/bs';
 import { IoMenu } from 'react-icons/io5';
 import { MdMenu } from 'react-icons/md';
 import { RxCross1 } from 'react-icons/rx';
@@ -6,32 +7,32 @@ import { HashLink } from 'react-router-hash-link';
 
 const Navbar = () => {
 
-    const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
+//     const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
 
-useEffect(() => {
-  if (theme === 'dark') {
-    document.body.classList.add('dark-mode');
-    localStorage.setItem('theme', 'dark');
-  } else {
-    document.body.classList.remove('dark-mode');
-    localStorage.setItem('theme', 'light');
-  }
-}, [theme]);
+// useEffect(() => {
+//   if (theme === 'dark') {
+//     document.body.classList.add('dark-mode');
+//     localStorage.setItem('theme', 'dark');
+//   } else {
+//     document.body.classList.remove('dark-mode');
+//     localStorage.setItem('theme', 'light');
+//   }
+// }, [theme]);
 
-const toggleTheme = () => {
-  setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
-};
+// const toggleTheme = () => {
+//   setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
+// };
 
     const [isMenuOpen, setIsMenuOpen] = useState(false); 
     return (
-        <nav className="p-4 fixed w-full backdrop-blur-lg top-0 left-0 z-10  shadow-lg">
-      <div className="max-w-7xl mx-auto flex justify-between items-center">
+        <nav className="p-4 fixed w-full text-white bg-blue-950 backdrop-blur-lg top-0 left-0 z-10  shadow-lg">
+      <div className="px-4 md:px-10 flex justify-between items-center">
         {/* Logo */}
         <div className="text-2xl font-bold">Md Abu Bakar Siddique</div>
-
+{/* 
         <button onClick={toggleTheme}>
-  Switch to {theme === 'light' ? 'Dark' : 'Light'} Mode
-</button>
+  {theme === <BsMoon /> ? 'Dark' : <BsSun />}
+</button> */}
 
         {/* Hamburger Menu (Only on Mobile) */}
         <div className="lg:hidden">
@@ -57,7 +58,7 @@ const toggleTheme = () => {
 
       {/* Mobile Navigation (Full-Screen Overlay) */}
       {isMenuOpen && (
-        <div className="fixed bg-gray-600 top-[20px] left-0 right-0 bg-opacity-60 backdrop-blur-md flex flex-col justify-center items-center text-center space-y-5 text-xl font-semibold transition-all duration-300">
+        <div className="fixed bg-gray-800 top-[20px] left-0 right-0 bg-opacity-60 backdrop-blur-md flex flex-col justify-center items-center text-center space-y-5 pb-4 text-xl font-semibold transition-all duration-300">
           <button 
             onClick={() => setIsMenuOpen(false)} 
             className="absolute top-6 right-6">
