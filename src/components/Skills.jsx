@@ -5,21 +5,21 @@ const skills = [
   {
     category: "Frontend",
     items: [
-      { name: "HTML", icon: "https://img.icons8.com/?size=100&id=20909&format=png&color=000000" },
-      { name: "CSS", icon: "https://img.icons8.com/?size=100&id=21278&format=png&color=000000" },
-      { name: "Tailwind CSS", icon: "https://img.icons8.com/?size=100&id=CIAZz2CYc6Kc&format=png&color=000000" },
-      { name: "JavaScript", icon: "https://img.icons8.com/?size=100&id=108784&format=png&color=000000" },
-      { name: "ReactJS", icon: "https://img.icons8.com/?size=100&id=123603&format=png&color=000000" },
-      { name: "NextJS", icon: "https://img.icons8.com/?size=100&id=yUdJlcKanVbh&format=png&color=000000" },
+      { name: "HTML", icon: "https://img.icons8.com/?size=100&id=20909&format=png" },
+      { name: "CSS", icon: "https://img.icons8.com/?size=100&id=21278&format=png" },
+      { name: "Tailwind CSS", icon: "https://img.icons8.com/?size=100&id=CIAZz2CYc6Kc&format=png" },
+      { name: "JavaScript", icon: "https://img.icons8.com/?size=100&id=108784&format=png" },
+      { name: "ReactJS", icon: "https://img.icons8.com/?size=100&id=123603&format=png" },
+      { name: "NextJS", icon: "https://img.icons8.com/?size=100&id=yUdJlcKanVbh&format=png" },
     ],
   },
   {
     category: "Backend & Databases",
     items: [
-      { name: "Node JS", icon: "https://img.icons8.com/?size=100&id=hsPbhkOH4FMe&format=png&color=000000" },
-      { name: "Express JS", icon: "https://img.icons8.com/?size=100&id=kg46nzoJrmTR&format=png&color=000000" },
-      { name: "MongoDB", icon: "https://img.icons8.com/?size=100&id=74402&format=png&color=000000" },
-      { name: "Firebase", icon: "https://img.icons8.com/?size=100&id=62452&format=png&color=000000" },
+      { name: "Node JS", icon: "https://img.icons8.com/?size=100&id=hsPbhkOH4FMe&format=png" },
+      { name: "Express JS", icon: "https://img.icons8.com/?size=100&id=kg46nzoJrmTR&format=png" },
+      { name: "MongoDB", icon: "https://img.icons8.com/?size=100&id=74402&format=png" },
+      { name: "Firebase", icon: "https://img.icons8.com/?size=100&id=62452&format=png" },
     ],
   },
 ];
@@ -29,12 +29,8 @@ const Skills = () => {
   const isInView = useInView(ref, { triggerOnce: true });
 
   return (
-    <section
-      id="skills"
-      ref={ref}
-      className="py-16 bg-black text-white px-6 md:px-16"
-    >
-      <div className="max-w-5xl mx-auto text-center">
+    <motion.section id="skills" className="py-16 bg-black text-white px-6 md:px-16">
+      <div ref={ref} className="max-w-5xl mx-auto text-center">
         {/* Section Title */}
         <motion.h2
           initial={{ opacity: 0, y: -20 }}
@@ -79,13 +75,9 @@ const Skills = () => {
                     visible: { opacity: 1, scale: 1 },
                   }}
                   transition={{ duration: 0.5 }}
-                  className="p-6 rounded-xl shadow-lg flex flex-col items-center hover:bg-blue-600 transition-all transform hover:scale-105 cursor-pointer"
+                  className="p-6 rounded-xl shadow-xl flex flex-col items-center bg-gray-800 hover:bg-blue-500/80 transition-all transform hover:scale-105 cursor-pointer"
                 >
-                  <img
-                    src={skill.icon}
-                    alt={skill.name}
-                    className="w-16 text-white h-16 mb-4"
-                  />
+                  <img src={skill.icon} alt={skill.name} className="w-16 h-16 mb-4" />
                   <p className="text-lg font-medium">{skill.name}</p>
                 </motion.div>
               ))}
@@ -93,7 +85,7 @@ const Skills = () => {
           </div>
         ))}
       </div>
-    </section>
+    </motion.section>
   );
 };
 

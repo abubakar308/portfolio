@@ -1,79 +1,137 @@
 import React, { useEffect, useState } from 'react';
-import { BsMoon, BsSun } from 'react-icons/bs';
 import { IoMenu } from 'react-icons/io5';
-import { MdMenu } from 'react-icons/md';
 import { RxCross1 } from 'react-icons/rx';
 import { HashLink } from 'react-router-hash-link';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const Navbar = () => {
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isScrolled, setIsScrolled] = useState(false);
 
-//     const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
+    useEffect(() => {
+        const handleScroll = () => {
+            setIsScrolled(window.scrollY > 50);
+        };
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
 
-// useEffect(() => {
-//   if (theme === 'dark') {
-//     document.body.classList.add('dark-mode');
-//     localStorage.setItem('theme', 'dark');
-//   } else {
-//     document.body.classList.remove('dark-mode');
-//     localStorage.setItem('theme', 'light');
-//   }
-// }, [theme]);
-
-// const toggleTheme = () => {
-//   setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
-// };
-
-    const [isMenuOpen, setIsMenuOpen] = useState(false); 
     return (
-        <nav className="p-4 fixed w-full text-white bg-blue-950 backdrop-blur-lg top-0 left-0 z-10  shadow-lg">
-      <div className="px-4 md:px-10 flex justify-between items-center">
-        {/* Logo */}
-        <div className="text-2xl font-bold">Md Abu Bakar Siddique</div>
-{/* 
-        <button onClick={toggleTheme}>
-  {theme === <BsMoon /> ? 'Dark' : <BsSun />}
-</button> */}
+        <motion.nav 
+            initial={{ y: -50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.5 }}
+            className={`p-4 fixed w-full text-white ${
+                isScrolled ? "bg-blue-900 shadow-lg" : "bg-transparent"
+            } backdrop-blur-lg top-0 left-0 z-10 transition-all duration-300`}
+        >
+            <div className="px-4 md:px-10 flex justify-between items-center">
+                {/* Logo */}
+                <div className="text-2xl font-bold">Md Abu Bakar Siddique</div>
 
-        {/* Hamburger Menu (Only on Mobile) */}
-        <div className="lg:hidden">
-          <button 
-            onClick={() => setIsMenuOpen(!isMenuOpen)} >
-            {isMenuOpen ? (
-            ""
-            ) : (
-              <IoMenu size={32} />
-            )}
-          </button>
-        </div>
+                {/* Desktop Navigation */}
+                <ul className="hidden lg:flex space-x-6">
+                    {["home", "about", "skills", "projects", "contact"].map((item) => (
+                        <motion.li 
+                            key={item}
+                            whileHover={{ scale: 1.1 }}
+                            transition={{ type: "spring", stiffness: 200 }}
+                        >
+                            <HashLink to={`#${item}`} className="relative hover:text-blue-500">
+                                {item.charAt(0).toUpperCase() + item.slice(1)}
+                                <motion.span 
+                                    className="absolute left-0 bottom-[-3px] w-0 h-[2px] bg-blue-500"
+                                    whileHover={{ width: "100%" }}
+                                    transition={{ duration: 0.3 }}
+                                ></motion.span>
+                            </HashLink>
+                        </motion.li>
+                    ))}
 
-        {/* Desktop Navigation */}
-        <ul className="hidden lg:flex space-x-6">
-          <li><HashLink to="#home" className="hover:text-blue-500">Home</HashLink></li>
-          <li><HashLink to="#about" className="hover:text-blue-500">About</HashLink></li>
-          <li><HashLink to="#skills" className="hover:text-blue-500">Skills</HashLink></li>
-          <li><HashLink to="#projects" className="hover:text-blue-500">Projects</HashLink></li>
-          <li><HashLink to="#contact" className="hover:text-blue-500">Contact</HashLink></li>
-        </ul>
-      </div>
+                    {/* ✅ View Resume Button */}
+                    <motion.li
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.8, delay: 0.5 }}
+                    >
+                        <a 
+                            href="https://drive.google.com/file/d/10G4G9L7bnbsUlwVRU6EECTW7MALf_fV-/view" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="bg-blue-500 text-white px-5 py-2 rounded-md hover:bg-blue-700 transition"
+                        >
+                            View Resume
+                        </a>
+                    </motion.li>
+                </ul>
 
-      {/* Mobile Navigation (Full-Screen Overlay) */}
-      {isMenuOpen && (
-        <div className="fixed bg-gray-800 top-[20px] left-0 right-0 bg-opacity-60 backdrop-blur-md flex flex-col justify-center items-center text-center space-y-5 pb-4 text-xl font-semibold transition-all duration-300">
-          <button 
-            onClick={() => setIsMenuOpen(false)} 
-            className="absolute top-6 right-6">
-             <RxCross1 size={32} />
-          </button>
-          <div className="flex flex-col mt-10 space-y-5">  {/* Added a wrapper div for better control */}
-    <HashLink to="#home" onClick={() => setIsMenuOpen(false)} className="hover:text-blue-500">Home</HashLink>
-    <HashLink to="#about" onClick={() => setIsMenuOpen(false)} className="hover:text-blue-500">About</HashLink>
-    <HashLink to="#skills" onClick={() => setIsMenuOpen(false)} className="hover:text-blue-500">Skills</HashLink>
-    <HashLink to="#projects" onClick={() => setIsMenuOpen(false)} className="hover:text-blue-500">Projects</HashLink>
-    <HashLink to="#contact" onClick={() => setIsMenuOpen(false)} className="hover:text-blue-500">Contact</HashLink>
-  </div>
-        </div>
-      )}
-    </nav>
+                {/* Mobile Menu Button */}
+                <div className="lg:hidden">
+                    <motion.button 
+                        whileTap={{ scale: 0.8, rotate: 90 }}
+                        onClick={() => setIsMenuOpen(true)}
+                    >
+                        <IoMenu size={32} />
+                    </motion.button>
+                </div>
+            </div>
+
+            {/* Mobile Navigation */}
+            <AnimatePresence>
+                {isMenuOpen && (
+                    <motion.div
+                        initial={{ x: "100%" }}
+                        animate={{ x: 0 }}
+                        exit={{ x: "100%" }}
+                        transition={{ duration: 0.4, ease: "easeInOut" }}
+                        className="fixed top-0 right-0 h-screen w-[80%] bg-gray-900 bg-opacity-95 backdrop-blur-md flex flex-col items-center text-center space-y-6 pt-10 text-xl font-semibold z-50 shadow-lg"
+                    >
+                        {/* Close Icon */}
+                        <div className="absolute top-5 right-5">
+                            <motion.button 
+                                whileTap={{ scale: 0.8, rotate: 90 }}
+                                onClick={() => setIsMenuOpen(false)}
+                            >
+                                <RxCross1 size={32} className="text-white" />
+                            </motion.button>
+                        </div>
+
+                        {/* Mobile Menu Links */}
+                        {["home", "about", "skills", "projects", "contact"].map((item) => (
+                            <motion.div 
+                                key={item}
+                                whileHover={{ scale: 1.1 }}
+                                transition={{ type: "spring", stiffness: 200 }}
+                            >
+                                <HashLink 
+                                    to={`#${item}`} 
+                                    onClick={() => setIsMenuOpen(false)}
+                                    className="hover:text-blue-500"
+                                >
+                                    {item.charAt(0).toUpperCase() + item.slice(1)}
+                                </HashLink>
+                            </motion.div>
+                        ))}
+
+                        {/* ✅ View Resume Button (Mobile) */}
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.8 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            transition={{ duration: 0.8, delay: 0.5 }}
+                        >
+                            <a 
+                                href="https://drive.google.com/file/d/10G4G9L7bnbsUlwVRU6EECTW7MALf_fV-/view" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                className="bg-blue-500 text-white px-5 py-2 rounded-md hover:bg-blue-700 transition"
+                            >
+                                View Resume
+                            </a>
+                        </motion.div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
+        </motion.nav>
     );
 };
 
