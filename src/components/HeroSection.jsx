@@ -13,7 +13,7 @@ const isInView = useInView(ref, { triggerOnce: true });
         className="flex flex-col bg-black text-white lg:flex-row items-center  pt-20 md:pt-6 justify-center px-6 lg:px-16"
       >
         {/* Left Content */}
-        <div className="text-center lg:text-left max-w-lg">
+        <div className="text-center lg:text-left md:pt-16 max-w-lg">
           <motion.h1
             className="text-4xl lg:text-5xl font-semibold"
             initial={{ opacity: 0, x: -50 }}
@@ -33,7 +33,7 @@ const isInView = useInView(ref, { triggerOnce: true });
           </motion.p>
   
           <motion.a
-            href="https://drive.google.com/uc?export=download&id=10G4G9L7bnbsUlwVRU6EECTW7MALf_fV-"
+            href="https://drive.google.com/uc?export=download&id=1909-oKKJPFXLi7hQQftmyn06D6pWJmc3"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={isInView ? { opacity: 1, scale: 1 } : {}}
             transition={{ duration: 0.8, delay: 0.5 }}
@@ -53,7 +53,7 @@ const isInView = useInView(ref, { triggerOnce: true });
             <a
               href="https://github.com/abubakar308"
               target="_blank"
-              className="text-white bg-blue-600 p-3 rounded-full hover:bg-blue-700 transition duration-300"
+              className="text-white bg-blue-500 p-3 rounded-full hover:bg-blue-700 transition duration-300"
             >
               <FaGithub size={32} className="text-2xl" />
             </a>
@@ -61,7 +61,7 @@ const isInView = useInView(ref, { triggerOnce: true });
             <a
               href="https://www.linkedin.com/in/abubakar308"
               target="_blank"
-              className="text-white bg-blue-600 p-3 rounded-full hover:bg-blue-500 transition duration-300"
+              className="text-white bg-blue-500 p-3 rounded-full hover:bg-blue-700 transition duration-300"
             >
               <FaLinkedin size={32} className="text-2xl" />
             </a>
@@ -69,7 +69,7 @@ const isInView = useInView(ref, { triggerOnce: true });
             <a
               href="https://www.facebook.com/mdabubakar308"
               target="_blank"
-              className="text-white bg-blue-700 p-3 rounded-full hover:bg-blue-600 transition duration-300"
+              className="text-white bg-blue-500 p-3 rounded-full hover:bg-blue-700 transition duration-300"
             >
               <FaFacebook size={32} className="text-2xl" />
             </a>

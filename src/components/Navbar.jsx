@@ -27,7 +27,7 @@ const Navbar = () => {
         >
             <div className="px-4 md:px-10 flex justify-between items-center">
                 {/* Logo */}
-                <div className="text-2xl font-bold">Md Abu Bakar Siddique</div>
+                <h2 className="text-2xl font-bold">Md Abu Bakar Siddique</h2>
 
                 {/* Desktop Navigation */}
                 <ul className="hidden lg:flex space-x-6">
@@ -55,7 +55,7 @@ const Navbar = () => {
                         transition={{ duration: 0.8, delay: 0.5 }}
                     >
                         <a 
-                            href="https://drive.google.com/file/d/10G4G9L7bnbsUlwVRU6EECTW7MALf_fV-/view" 
+                            href="https://drive.google.com/file/d/1909-oKKJPFXLi7hQQftmyn06D6pWJmc3/view?usp=sharing" 
                             target="_blank" 
                             rel="noopener noreferrer"
                             className="bg-blue-500 text-white px-5 py-2 rounded-md hover:bg-blue-700 transition"
@@ -84,7 +84,7 @@ const Navbar = () => {
                         animate={{ x: 0 }}
                         exit={{ x: "100%" }}
                         transition={{ duration: 0.4, ease: "easeInOut" }}
-                        className="fixed top-0 right-0 h-screen w-[80%] bg-gray-900 bg-opacity-95 backdrop-blur-md flex flex-col items-center text-center space-y-6 pt-10 text-xl font-semibold z-50 shadow-lg"
+                        className="fixed top-0 right-0 h-screen w-[70%] bg-gray-900 bg-opacity-95 backdrop-blur-md flex flex-col items-center text-center space-y-6 pt-10 text-xl font-semibold z-50 shadow-lg"
                     >
                         {/* Close Icon */}
                         <div className="absolute top-5 right-5">
