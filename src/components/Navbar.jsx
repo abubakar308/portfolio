@@ -25,7 +25,7 @@ const Navbar = () => {
                 isScrolled ? "bg-blue-900 shadow-lg" : "bg-transparent"
             } backdrop-blur-lg top-0 left-0 z-10 transition-all duration-300`}
         >
-            <div className="px-4 md:px-10 flex justify-between items-center">
+            <div className="px-4 container mx-auto md:px-10 flex justify-between items-center">
                 {/* Logo */}
                 <h2 className="text-2xl font-bold">Md Abu Bakar Siddique</h2>
 

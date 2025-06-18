@@ -13,7 +13,7 @@ const isInView = useInView(ref, { triggerOnce: true });
         className="flex flex-col bg-black text-white lg:flex-row items-center  pt-20 md:pt-6 justify-center px-6 lg:px-16"
       >
         {/* Left Content */}
-        <div className="text-center lg:text-left md:pt-16 max-w-lg">
+        <div className="text-center container lg:text-left md:pt-16 max-w-lg">
           <motion.h1
             className="text-4xl lg:text-5xl font-semibold"
             initial={{ opacity: 0, x: -50 }}
