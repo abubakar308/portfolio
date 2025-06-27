@@ -58,11 +58,11 @@ const Contact = () => {
             <div className="flex items-center space-x-3">
               <FaEnvelope className="text-xl text-blue-400" />
               <a
-                href="mailto:mdabubakarsiddique789@gmail.com"
+                href="mailto:mdabubakar.dev@gmail.com"
                 className="text-lg text-blue-400 hover:underline"
                 rel="noopener noreferrer"
               >
-                mdabubakarsiddique789@gmail.com
+                mdabubakar.dev@gmail.com
               </a>
             </div>
 
