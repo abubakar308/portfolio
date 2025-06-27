@@ -10,7 +10,7 @@ const isInView = useInView(ref, { triggerOnce: true });
         <section
         id="home"
         ref={ref}
-        className="flex flex-col bg-black text-white lg:flex-row items-center  pt-20 md:pt-6 justify-center px-6 lg:px-16"
+        className="flex flex-col bg-black text-white lg:flex-row items-center  py-20 md:pt-6 justify-center px-6 lg:px-16"
       >
         {/* Left Content */}
         <div className="text-center container lg:text-left md:pt-16 max-w-lg">
@@ -20,8 +20,10 @@ const isInView = useInView(ref, { triggerOnce: true });
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 1 }}
           >
-            Hi, I'm <span className="text-blue-500 font-bold">Md Abu Bakar Siddique</span>
+            Hi, I'm <span className="text-blue-500 font-bold mt-2">Md Abu Bakar Siddique</span>
           </motion.h1>
+          <h2 className="text-blue-400 text-xl mt-2">Junior Full Stack Web Developer | MERN Stack</h2>
+
   
           <motion.p
             className="mt-4 text-lg lg:text-2xl"
@@ -32,16 +34,28 @@ const isInView = useInView(ref, { triggerOnce: true });
             A passionate web developer primarily using the MERN stack to build scalable websites.
           </motion.p>
   
-          <motion.a
+         {/* CTA Buttons */}
+        <motion.div
+          className="flex gap-4 mt-6 justify-center lg:justify-start"
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={isInView ? { opacity: 1, scale: 1 } : {}}
+          transition={{ duration: 0.8, delay: 0.5 }}
+        >
+          <a
             href="https://drive.google.com/uc?export=download&id=1909-oKKJPFXLi7hQQftmyn06D6pWJmc3"
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={isInView ? { opacity: 1, scale: 1 } : {}}
-            transition={{ duration: 0.8, delay: 0.5 }}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-blue-500 text-white px-6 py-3 rounded-md hover:bg-blue-700 transition"
           >
-            <button className="bg-blue-500 text-white px-6 py-3 mt-6 rounded-md hover:bg-blue-700 transition">
-              Download Resume
-            </button>
-          </motion.a>
+            Download Resume
+          </a>
+          <a
+            href="#contact"
+            className="bg-white text-blue-600 px-6 py-3 rounded-md font-semibold hover:bg-gray-300 transition"
+          >
+            Hire Me
+          </a>
+        </motion.div>
   
           {/* Social Media Icons */}
           <motion.div
@@ -78,12 +92,13 @@ const isInView = useInView(ref, { triggerOnce: true });
   
         {/* Right Image */}
         <motion.div
-          className="mt-8 lg:mt-0 lg:ml-12"
+          className="w-full flex justify-center lg:justify-end"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={isInView ? { opacity: 1, scale: 1 } : {}}
           transition={{ duration: 1, delay: 0.6 }}
         >
-          <img src={profile} alt="Abubakar" className="w-64 lg:w-80" />
+         <img src={profile} alt="Abubakar" className="w-64 lg:w-80 rounded-xl shadow-lg border-4 border-blue-500 mt-10 bg-gray-200 bg-transparent" />
+
         </motion.div>
       </section>
     );
